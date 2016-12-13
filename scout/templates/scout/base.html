@@ -5,7 +5,7 @@
 <html class="no-js" lang="en">
 
     <head>
-        <title>{% block title %}{% endblock %} &middot; UW Scout</title>
+        <title>{% block title %}{% endblock %} &middot; Smith Scout</title>
         {% include "scout/include/head.html" %}
     </head>
 
@@ -20,18 +20,10 @@
                 {% else %}
                 <h1 style="background: url('{% static "scout/img/scout.png" %}') no-repeat 0px; background-size:13%;">
                 {% endif %}
-                <a id="link_home" href="/{{ campus }}/" title="Discover UW places and items">Scout</a>
+                <a id="link_home" href="/{{ campus }}/study/" title="Discover Smith places">Scout</a>
                 </h1>
 
                 <input id="campus_select_base" type="hidden" value="smith" />
-
-                <div class="scout-navigation" role="navigation" aria-label="main navigation">
-                    <ul class="scout-navigation-items" role="tablist">
-                        <li><a role="tab" id="link_food" href="/{{ campus }}/food/" {% if app_type == 'food' %}class="active" aria-selected="true"{% endif %} title="List of food places on campus"><i class="fa fa-cutlery" aria-hidden="true"></i> Food</a></li>
-                        <li><a role="tab" id="link_study" href="/{{ campus }}/study/" {% if app_type == 'study' %}class="active" aria-selected="true"{% endif %} title="List of study places on campus"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Study</a></li>
-                        <li><a role="tab" id="link_tech" href="/{{ campus }}/tech/" {% if app_type == 'tech' %}class="active" aria-selected="true"{% endif %} title="List of technology resources on campus"><i class="fa fa-laptop" aria-hidden="true"></i> Tech</a></li>
-                    </ul>
-                </div>
 
             </div>
 
@@ -40,7 +32,7 @@
             </div>
 
             <div id="footer" class="scout-footer" role="contentinfo">
-                <div style="margin-left:20px;float:left;">&copy; {% now "Y" %} UW-IT, AXDD <a href="http://www.washington.edu/online/privacy/" title="UW Privacy Policy">Privacy</a> <a href="http://www.washington.edu/online/terms/" style="margin-left:5px;" title="UW Terms & Conditions of Use">Terms</a></div>
+                <div style="margin-left:20px;float:left;">&copy; {% now "Y" %} Smith-IT, AXDD <a href="http://www.washington.edu/online/privacy/" title="Smith Privacy Policy">Privacy</a> <a href="http://www.washington.edu/online/terms/" style="margin-left:5px;" title="Smith Terms & Conditions of Use">Terms</a></div>
                 <div style="float:right;margin-right:20px;"><a href="mailto:help@uw.edu?subject=Scout:%20Help%20needed" title="Request help via email">Help</a></div>
             </div>
 
