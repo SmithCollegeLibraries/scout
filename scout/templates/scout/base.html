@@ -23,19 +23,7 @@
                 <a id="link_home" href="/{{ campus }}/" title="Discover UW places and items">Scout</a>
                 </h1>
 
-                <div class="scout-campus-chooser">
-                    <div>
-                        <label id="location_select_heading" for="campus_select_base" class="visually-hidden">Select campus:</label>
-                        <select id="campus_select_base">
-                            <option value="seattle" {% if campus == 'seattle' %}selected{% endif %}>Seattle</option>
-                            <option value="bothell" {% if campus == 'bothell' %}selected{% endif %}>Bothell</option>
-                            <option value="tacoma" {% if campus == 'tacoma' %}selected{% endif %}>Tacoma</option>
-                        </select>
-                    </div>
-                    <div class="scout-campus-display">
-                        <i class="fa fa-chevron-circle-down"></i>
-                    </div>
-                </div>
+                <input id="campus_select_base" type="hidden" value="smith" />
 
                 <div class="scout-navigation" role="navigation" aria-label="main navigation">
                     <ul class="scout-navigation-items" role="tablist">

@@ -13,15 +13,12 @@ from scout.dao.item import (get_item_by_id, get_filtered_items, get_item_count)
 from django.views.generic.base import TemplateView, TemplateResponse
 
 # using red square as the default center
-DEFAULT_LAT = 47.6558539
-DEFAULT_LON = -122.3094925
+DEFAULT_LAT = 42.3182544
+DEFAULT_LON = -72.6387925
 
 
 CAMPUS_LOCATIONS = {
-    "seattle": {"latitude": 47.653811, "longitude": -122.307815},
-    "south_lake_union": {"latitude": 47.62456939, "longitude": -122.34105337},
-    "bothell": {"latitude": 47.75907121, "longitude": -122.19103843},
-    "tacoma": {"latitude": 47.24458187, "longitude": -122.43763134},
+    "smith": {"latitude": 42.3182544, "longitude": -72.6387925},
 }
 
 
@@ -361,7 +358,7 @@ def item_image_view(request, image_id, item_id):
 
 
 # Custom method-based 404 page
-def custom_404_response(request, campus="seattle"):
+def custom_404_response(request, campus=CAMPUS_LOCATIONS.keys()[0]):
     context = custom_404_context(campus)
     response = render_to_response('404.html', context,
                                   context_instance=RequestContext(request))
@@ -369,7 +366,7 @@ def custom_404_response(request, campus="seattle"):
     return response
 
 
-def custom_404_context(campus="seattle"):
+def custom_404_context(campus=CAMPUS_LOCATIONS.keys()[0]):
     context = {"campus": campus,
                "campus_locations": CAMPUS_LOCATIONS}
     return context

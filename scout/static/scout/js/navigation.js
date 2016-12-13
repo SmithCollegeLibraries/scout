@@ -23,7 +23,7 @@ var Navigation = {
             var anchor = $("#" + val);
             var url = $(anchor).attr('href');
             if (url !== undefined){
-                var new_url = url.replace(/seattle|tacoma|bothell/, new_campus);
+                var new_url = url.replace(/smith/, new_campus);
                 $(anchor).attr('href', new_url);
             }
         });

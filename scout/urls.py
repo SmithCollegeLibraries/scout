@@ -21,7 +21,7 @@ from scout.views import TechFilterView
 urlpatterns = patterns(
     '',
     # home
-    url(r'^$', RedirectView.as_view(url='/seattle')),
+    url(r'^$', RedirectView.as_view(url='/smith')),
 
     # discover
     url(r'^(?P<campus>[^/]+)/$',
@@ -57,7 +57,7 @@ urlpatterns = patterns(
         TechFilterView.as_view(), {"template_name": "scout/tech/filter.html"}),
 
     # hybrid home
-    url(r'^h/$', RedirectView.as_view(url='/h/seattle')),
+    url(r'^h/$', RedirectView.as_view(url='/h/smith')),
 
     # hybrid discover
     url(r'^h/(?P<campus>[^/]+)/$',
