@@ -60,46 +60,8 @@ class DiscoverCardView(TemplateView):
         lat = self.request.GET.get('latitude', None)
         lon = self.request.GET.get('longitude', None)
 
-        # Hardcoded for food at the moment. Change it per need basis.
+        # Change it per need basis.
         discover_categories = {
-            "open": {
-                "title": "Open Now",
-                "spot_type": "food",
-                "filter_url": "open_now=true",
-                "filter": [
-                    ('limit', 5),
-                    ('open_now', True),
-                    ('center_latitude', lat if lat else DEFAULT_LAT),
-                    ('center_longitude', lon if lon else DEFAULT_LON),
-                    ('distance', 100000),
-                    ('extended_info:app_type', 'food')
-                    ]
-            },
-            "morning": {
-                "title": "Open Mornings (5am - 11am)",
-                "spot_type": "food",
-                "filter_url": "period0=morning",
-                "filter": [
-                    ('limit', 5),
-                    ('center_latitude', lat if lat else DEFAULT_LAT),
-                    ('center_longitude', lon if lon else DEFAULT_LON),
-                    ('distance', 100000),
-                    ('extended_info:app_type', 'food')
-                    ] + get_period_filter('morning')
-
-            },
-            "late": {
-                "title": "Open Late Night (10pm - 5am)",
-                "spot_type": "food",
-                "filter_url": "period0=late_night",
-                "filter": [
-                    ('limit', 5),
-                    ('center_latitude', lat if lat else DEFAULT_LAT),
-                    ('center_longitude', lon if lon else DEFAULT_LON),
-                    ('distance', 100000),
-                    ('extended_info:app_type', 'food')
-                    ] + get_period_filter('late_night')
-            },
             "studyoutdoors": {
                 "title": "Outdoor Study Areas",
                 "spot_type": "study",
@@ -132,16 +94,6 @@ class DiscoverCardView(TemplateView):
                     ('limit', 0)
                 ]
             },
-            "foodrandom": {
-                "title": "Places to eat",
-                "spot_type": "food",
-                "filter_url": "",
-                "filter": [
-                    ('extended_info:app_type', 'food'),
-                    ('limit', 0)
-                ]
-            },
-
         }
 
         try:
