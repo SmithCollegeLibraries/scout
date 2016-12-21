@@ -172,10 +172,11 @@
                         </p>
 
                         <p>
-                            <form class="form form-horizontal">
-                                <input type="submit" value="Occupy 30" name="occupy" class="btn btn-default" />
+                            <form action="occupy/" class="form form-horizontal" method="post">
+                                {% csrf_token %}
+                                <input type="submit" value="Occupy 30" name="minutes" class="btn btn-default" />
                                 &nbsp;
-                                <input type="submit" value="Occupy 60" name="occupy" class="btn btn-default" />
+                                <input type="submit" value="Occupy 60" name="minutes" class="btn btn-default" />
                                 &nbsp;
                                 with
                                 &nbsp;
