@@ -1,12 +1,13 @@
 from django.http import Http404, HttpResponse
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
 from django.core.exceptions import ImproperlyConfigured
 from django.conf import settings
 from scout.dao.space import (get_spot_by_id, get_filtered_spots,
                              get_period_filter, get_spots_by_filter,
                              group_spots_by_building, get_building_list,
-                             validate_detail_info, get_random_limit_from_spots)
+                             validate_detail_info, get_random_limit_from_spots,
+                             post_occupancy)
 from scout.dao.image import get_spot_image, get_item_image
 from scout.dao.item import (get_item_by_id, get_filtered_items, get_item_count)
 
@@ -208,6 +209,21 @@ class StudyDetailView(TemplateView):
                    "app_type": 'study',
                    "campus_locations": CAMPUS_LOCATIONS}
         return context
+
+
+def occupy_spot(request, campus, spot_id):
+    spot = get_spot_by_id(spot_id)
+    if not spot:
+        request.response_class = Response404
+        request.template_name = "404.html"
+        return custom_404_context(campus)
+
+    minutes = request.POST.get('minutes').replace('Occupy ','')
+    students = request.POST.get('students')
+    if minutes != None and students != None:
+        post_occupancy(spot_id, {'minutes': minutes, 'students': students})
+
+    return redirect('study_detail', campus=campus, spot_id=spot_id)
 
 
 class StudyFilterView(TemplateView):

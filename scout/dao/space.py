@@ -3,6 +3,7 @@ from spotseeker_restclient.exceptions import DataFailureException
 import datetime
 import pytz
 import random
+import json
 
 OPEN_PERIODS = {
         # 5am - 10:59am
@@ -26,6 +27,17 @@ OPEN_PERIODS = {
             'end':  datetime.time(5, 0, 0, 0)
         },
     }
+
+
+def post_occupancy(spot_id, occupancy_data):
+    spot_client = Spotseeker()
+
+    try:
+        spot_client.post_occupancy(spot_id, json.dumps(occupancy_data))
+    except DataFailureException:
+        pass
+
+    return None
 
 
 def get_spot_list(app_type=None, groups=[]):
