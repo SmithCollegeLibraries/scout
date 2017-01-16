@@ -54,10 +54,6 @@ def add_item_info(spot):
             "i_manual_url",
             item.extended_info
         )
-        item.owner = _get_extended_info_by_key(
-            "i_owner",
-            item.extended_info
-        )
         item.is_stf = _get_extended_info_by_key(
             "i_is_stf",
             item.extended_info
