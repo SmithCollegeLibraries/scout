@@ -47,7 +47,7 @@ class DiscoverView(TemplateView):
         self.template_name = kwargs['template_name']
         context = {"campus": kwargs['campus'],
                    "campus_locations": CAMPUS_LOCATIONS,
-                   "random_cards": ["studyrandom", "foodrandom"]}
+                   "random_cards": ["studyopen", "studyrooms"]}
         return context
 
 
@@ -63,36 +63,28 @@ class DiscoverCardView(TemplateView):
 
         # Change it per need basis.
         discover_categories = {
-            "studyoutdoors": {
-                "title": "Outdoor Study Areas",
+            "studyopen": {
+                "title": "Open Study",
                 "spot_type": "study",
-                "filter_url": "type0=outdoor",
+                "filter_url": "type0=open",
                 "filter": [
                     ('limit', 5),
                     ('center_latitude', lat if lat else DEFAULT_LAT),
                     ('center_longitude', lon if lon else DEFAULT_LON),
                     ('distance', 100000),
-                    ('type', 'outdoor')
+                    ('type', 'open')
                     ]
             },
-            "studycomputerlab": {
-                "title": "Computer Labs",
+            "studyrooms": {
+                "title": "Study Rooms",
                 "spot_type": "study",
-                "filter_url": "type0=computer_lab",
+                "filter_url": "type0=study_room",
                 "filter": [
                     ('limit', 5),
                     ('center_latitude', lat if lat else DEFAULT_LAT),
                     ('center_longitude', lon if lon else DEFAULT_LON),
                     ('distance', 100000),
-                    ('type', 'computer_lab')
-                ]
-            },
-            "studyrandom": {
-                "title": "Places to study",
-                "spot_type": "study",
-                "filter_url": "",
-                "filter": [
-                    ('limit', 0)
+                    ('type', 'study_room')
                 ]
             },
         }

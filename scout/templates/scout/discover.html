@@ -12,9 +12,7 @@
 
     <div class="scout-discover-container" style="position:relative;" role="main" aria-labelledby="campus_heading">
 
-        {% if campus == 'smith' %}
-        <!-- Edit scout/discover.html to add custom content here -->
-        {% endif %}
+        <div class="scout-discover-image" style="background-image:url('{% static "scout/img/smith/smith.jpg" %}'); background-size:cover; color:#fff;">
 
             <div style="background:rgba(0,0,0,0.30); padding: 170px 0 20px 0;">
                 <div class="discover-heading-container"><h2 id="campus_heading">{{campus}} Campus</h2>
@@ -42,15 +40,8 @@
         </div>
 
         <div id="discover_cards">
-
-            <div id="open"></div>
-            <div id="morning"></div>
-            <div id="studycomputerlab"></div>
-            <div id="{{ random_cards|random }}"></div>
-            <div>{% include "scout/discover_tech.html" %}</div>
-            <div id="late"></div>
-            <div id="studyoutdoors"></div>
-
+            <div id="studyopen"></div>
+            <div id="studyrooms"></div>
         </div>
 
     </div>
