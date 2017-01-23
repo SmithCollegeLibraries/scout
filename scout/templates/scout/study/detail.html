@@ -158,6 +158,7 @@
 
         <div class="scout-spot-content">
 
+            {% if not spot.reservable %}
             <div class="scout-card">
                 <div class="scout-spot-occupy">
                     <h3>Occupy this Space</h3>
@@ -192,6 +193,7 @@
 
                 </div>
             </div>
+            {% endif %}
 
 
             <div class="scout-card">
