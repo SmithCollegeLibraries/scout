@@ -1,5 +1,6 @@
 from spotseeker_restclient.spotseeker import Spotseeker
 from spotseeker_restclient.exceptions import DataFailureException
+from django.conf import settings
 import datetime
 import pytz
 import random
@@ -224,7 +225,7 @@ def process_extended_info(spot):
     spot = organize_hours(spot)
     spot = add_item_info(spot)
 
-    now = datetime.datetime.now(pytz.timezone('America/Los_Angeles'))
+    now = datetime.datetime.now(pytz.timezone(settings.TIME_ZONE))
     spot.is_open = get_is_spot_open(spot, now)
     spot.open_periods = get_open_periods_by_day(spot, now)
     return spot
