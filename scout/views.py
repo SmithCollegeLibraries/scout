@@ -1,8 +1,9 @@
 from django.http import Http404, HttpResponse
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import render_to_response, render, redirect
 from django.template import RequestContext
 from django.core.exceptions import ImproperlyConfigured
 from django.conf import settings
+from django.views.decorators.csrf import ensure_csrf_cookie
 from scout.dao.space import (get_spot_by_id, get_filtered_spots,
                              get_period_filter, get_spots_by_filter,
                              group_spots_by_building, get_building_list,
@@ -203,6 +204,7 @@ class StudyDetailView(TemplateView):
         return context
 
 
+@ensure_csrf_cookie
 def occupy_spot(request, campus, spot_id):
     spot = get_spot_by_id(spot_id)
     if not spot:
@@ -214,8 +216,12 @@ def occupy_spot(request, campus, spot_id):
     students = request.POST.get('students')
     if minutes != None and students != None:
         post_occupancy(spot_id, {'minutes': minutes, 'students': students})
+        spot = get_spot_by_id(spot_id)
 
-    return redirect('study_detail', campus=campus, spot_id=spot_id)
+    if request.is_ajax():
+        return render(request, 'scout/include/occupy.html', {'spot': spot, 'students': students})
+    else:
+        return redirect('study_detail', campus=campus, spot_id=spot_id)
 
 
 class StudyFilterView(TemplateView):

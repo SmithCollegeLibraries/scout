@@ -1,0 +1,41 @@
+{% load staticfiles %}
+
+<div class="scout-spot-occupy">
+    <h3>Occupy this Space</h3>
+
+    {% if spot.available %}
+
+        <div class="spot-form">
+            <p>
+                {% if spot.occupied == None %}
+                    This space is vacant.
+                {% else %}
+                    {{ spot.occupied }} of {{ spot.capacity }} seats occupied ({{ spot.percentage }}% capacity)
+                {% endif %}
+            </p>
+
+            <p>
+                <form action="occupy/" class="form form-horizontal" method="post" id="occupy">
+                    {% csrf_token %}
+                    <input type="hidden" name="minutes" id="minutes" />
+                    <input type="submit" value="Occupy 30" class="btn btn-default minutes" />
+                    &nbsp;
+                    <input type="submit" value="Occupy 60" class="btn btn-default minutes" />
+                    &nbsp;
+                    with
+                    &nbsp;
+                    <input type="number" value="{{ students | default:1 }}" name="students" class="form-control" size="4" min="1" max="{{ spot.remainder }}" />
+                    &nbsp;
+                    student(s)
+                </form>
+            </p>
+        </div>
+
+        <div class="spot-spinner" style="display:none">
+            <img src="{% static 'scout/img/ajax-loader.gif' %}" hspace="70" />
+        </div>
+
+    {% else %}
+        <p>This space is at capacity.</p>
+    {% endif %}
+</div>

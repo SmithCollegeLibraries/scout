@@ -41,6 +41,54 @@ var Layout = {
             $(".spot-detail-main-image").height(aspectHeight);
             $(".scout-spot-gallery").css('max-height', aspectHeight);
         }
+        $(document).on('click', 'form#occupy input.minutes', function (e) {
+            e.preventDefault();
+
+            var input = e.target;
+            var form = input.form;
+            var url = window.location.href + $(form).attr('action');
+
+            $(form).find('#minutes').val($(input).val());
+
+            $('div.scout-spot-occupy div.spot-form').hide();
+            $('div.scout-spot-occupy div.spot-spinner').show();
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: $(form).serialize(),
+                success: function(data) {
+                    $('div.scout-spot-occupy').replaceWith(data);
+                }
+            })
+        })
+
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+                }
+            }
+        });
+
+        function getCookie(c_name) {
+            if (document.cookie.length > 0)
+            {
+                c_start = document.cookie.indexOf(c_name + "=");
+                if (c_start != -1)
+                {
+                    c_start = c_start + c_name.length + 1;
+                    c_end = document.cookie.indexOf(";", c_start);
+                    if (c_end == -1) c_end = document.cookie.length;
+                    return unescape(document.cookie.substring(c_start,c_end));
+                }
+            }
+            return "";
+        }
 
     },
 };
