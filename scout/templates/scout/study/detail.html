@@ -160,38 +160,7 @@
 
             {% if not spot.reservable %}
             <div class="scout-card">
-                <div class="scout-spot-occupy">
-                    <h3>Occupy this Space</h3>
-
-                    {% if spot.available %}
-                        <p>
-                            {% if spot.occupied == None %}
-                                This space is vacant.
-                            {% else %}
-                                {{ spot.occupied }} of {{ spot.capacity }} seats occupied ({{ spot.percentage }}% capacity)
-                            {% endif %}
-                        </p>
-
-                        <p>
-                            <form action="occupy/" class="form form-horizontal" method="post">
-                                {% csrf_token %}
-                                <input type="submit" value="Occupy 30" name="minutes" class="btn btn-default" />
-                                &nbsp;
-                                <input type="submit" value="Occupy 60" name="minutes" class="btn btn-default" />
-                                &nbsp;
-                                with
-                                &nbsp;
-                                <input type="number" value="1" name="students" class="form-control" size="4" min="1" max="{{ spot.remainder }}" />
-                                &nbsp;
-                                student(s)
-                            </form>
-                        </p>
-
-                    {% else %}
-                        <p>This space is at capacity.</p>
-                    {% endif %}
-
-                </div>
+                {% include "scout/include/occupy.html" %}
             </div>
             {% endif %}
 
