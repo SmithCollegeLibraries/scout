@@ -31,13 +31,7 @@ OPEN_PERIODS = {
 
 def post_occupancy(spot_id, occupancy_data):
     spot_client = Spotseeker()
-
-    try:
-        spot_client.post_occupancy(spot_id, json.dumps(occupancy_data))
-    except DataFailureException:
-        pass
-
-    return None
+    return spot_client.post_occupancy(spot_id, json.dumps(occupancy_data))
 
 
 def get_spot_list(app_type=None, groups=[]):

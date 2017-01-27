@@ -8,7 +8,7 @@
         <div class="spot-form">
             <p>
                 {% if spot.occupied == None %}
-                    This space is vacant.
+                    This space is vacant. All {{ spot.capacity }} seats are unoccupied.
                 {% else %}
                     {{ spot.occupied }} of {{ spot.capacity }} seats occupied ({{ spot.percentage }}% capacity)
                 {% endif %}
@@ -29,6 +29,11 @@
                     student(s)
                 </form>
             </p>
+
+            {% if error %}
+            <p><strong style="color:red">{{ error }}</strong></p>
+            {% endif %}
+
         </div>
 
         <div class="spot-spinner" style="display:none">
