@@ -214,11 +214,15 @@ def occupy_spot(request, campus, spot_id):
 
     minutes = request.POST.get('minutes').replace('Occupy ','')
     students = request.POST.get('students')
+    response = None
     if minutes != None and students != None:
-        post_occupancy(spot_id, {'minutes': minutes, 'students': students})
+        response = post_occupancy(spot_id, {'minutes': minutes, 'students': students})
         spot = get_spot_by_id(spot_id)
 
-    if request.is_ajax():
+    if response != None and response.status == 403:
+        error_message = "There is not enough room for %s more students" % students
+        return render(request, 'scout/include/occupy.html', {'spot': spot, 'students': students, 'error': error_message})
+    elif request.is_ajax():
         return render(request, 'scout/include/occupy.html', {'spot': spot, 'students': students})
     else:
         return redirect('study_detail', campus=campus, spot_id=spot_id)
