@@ -158,7 +158,7 @@
 
         <div class="scout-spot-content">
 
-            {% if not spot.reservable %}
+            {% if spot.is_open and not spot.reservable %}
             <div class="scout-card">
                 {% include "scout/include/occupy.html" %}
             </div>
