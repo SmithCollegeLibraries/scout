@@ -117,5 +117,5 @@ class MainNavigationTest(ScoutTestCase):
         )
         self.assertEqual(
             mailtoLink.get('href'),
-            'mailto:help@uw.edu?subject=Scout:%20Help%20needed'
+            'mailto:libraryhelp@smith.edu?subject=Scout:%20Help%20needed'
         )
