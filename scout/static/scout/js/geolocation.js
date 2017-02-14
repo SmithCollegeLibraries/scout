@@ -1,6 +1,6 @@
 var Geolocation = {
     // drumheller fountain
-    default_location: { latitude: 42.3182544, longitude: -72.6387925 },
+    default_location: { latitude: 42.319862, longitude: -72.638693 },
 
     campus_locations: function(campus){
         var locations = window.campus_locations;

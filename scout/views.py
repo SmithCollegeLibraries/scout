@@ -15,12 +15,12 @@ from scout.dao.item import (get_item_by_id, get_filtered_items, get_item_count)
 from django.views.generic.base import TemplateView, TemplateResponse
 
 # using red square as the default center
-DEFAULT_LAT = 42.3182544
-DEFAULT_LON = -72.6387925
+DEFAULT_LAT = 42.319862
+DEFAULT_LON = -72.638693
 
 
 CAMPUS_LOCATIONS = {
-    "smith": {"latitude": 42.3182544, "longitude": -72.6387925},
+    "smith": {"latitude": 42.319862, "longitude": -72.638693},
 }
 
 
