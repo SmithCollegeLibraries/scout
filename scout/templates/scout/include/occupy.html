@@ -17,8 +17,8 @@
             <p>
                 <form action="occupy/" class="form form-horizontal" method="post" id="occupy">
                     {% csrf_token %}
-                    <button type="submit" name="minutes" value="60" class="btn btn-default minutes">Check in 1 hour</button> &nbsp;
-                    <button type="submit" name="minutes" value="120" class="btn btn-default minutes">Check in 2 hour</button> &nbsp;
+                    <button type="submit" name="minutes" value="60" class="btn btn-default minutes">Check in 1hr</button> &nbsp;
+                    <button type="submit" name="minutes" value="120" class="btn btn-default minutes">Check in 2hr</button> &nbsp;
                     with &nbsp;
                     <input type="number" value="{{ students | default:1 }}" name="students" class="form-control" size="4" min="1" max="{{ spot.remainder }}" /> &nbsp;
                     student(s)
