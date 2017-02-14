@@ -271,7 +271,7 @@ def occupy_spot(request, campus, spot_id):
         request.template_name = "404.html"
         return custom_404_context(campus)
 
-    minutes = request.POST.get('minutes').replace('Occupy ','')
+    minutes = request.POST.get('minutes')
     students = request.POST.get('students')
     response = None
     if minutes != None and students != None:

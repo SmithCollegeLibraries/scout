@@ -48,8 +48,6 @@ var Layout = {
             var form = input.form;
             var url = window.location.href + $(form).attr('action');
 
-            $(form).find('#minutes').val($(input).val());
-
             $('div.scout-spot-occupy div.spot-form').hide();
             $('div.scout-spot-occupy div.spot-spinner').show();
 
