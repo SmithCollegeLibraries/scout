@@ -41,12 +41,13 @@ var Layout = {
             $(".spot-detail-main-image").height(aspectHeight);
             $(".scout-spot-gallery").css('max-height', aspectHeight);
         }
-        $(document).on('click', 'form#occupy input.minutes', function (e) {
+        $(document).on('click', 'form#occupy button.minutes', function (e) {
             e.preventDefault();
 
             var input = e.target;
             var form = input.form;
             var url = window.location.href + $(form).attr('action');
+            var data = $(form).serialize() + '&minutes=' + $(input).val();
 
             $('div.scout-spot-occupy div.spot-form').hide();
             $('div.scout-spot-occupy div.spot-spinner').show();
@@ -54,7 +55,7 @@ var Layout = {
             $.ajax({
                 type: 'POST',
                 url: url,
-                data: $(form).serialize(),
+                data: data,
                 success: function(data) {
                     $('div.scout-spot-occupy').replaceWith(data);
                 }
