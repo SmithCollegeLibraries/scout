@@ -109,11 +109,11 @@ class MainNavigationTest(ScoutTestCase):
         privacyLink, termsLink, mailtoLink = footerLinks
         self.assertEqual(
             privacyLink.get('href'),
-            'http://www.washington.edu/online/privacy/'
+            'https://www.smith.edu/about-smith/privacy-policy'
         )
         self.assertEqual(
             termsLink.get('href'),
-            'http://www.washington.edu/online/terms/'
+            'https://www.smith.edu/about-smith/terms-of-use'
         )
         self.assertEqual(
             mailtoLink.get('href'),
