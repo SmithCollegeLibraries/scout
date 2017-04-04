@@ -66,11 +66,18 @@
             </div>
         </li>
         {% endif %}
-        {% if spot.reservable %}
+        {% if spot.reservable == 'reservations' %}
         <li class="item-content">
             <div class="item-inner">
-                <div class="item-title">{% if spot.reservable == 'reservations' %}Reservations required{% else %}Reservable{% endif %}</div>
+                <div class="item-title">Reservable</div>
                 <div class="item-after">see below</div>
+            </div>
+        </li>
+        {% endif %}
+        {% if spot.reservable == 'occupancies' %}
+        <li class="item-content">
+            <div class="item-inner">
+                <div class="item-title">Occupyable</div>
             </div>
         </li>
         {% endif %}
