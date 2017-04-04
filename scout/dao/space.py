@@ -138,7 +138,9 @@ def _get_spot_filters(request):
                 ("extended_info:or_group:lighting", request.GET[param])
             )
         if "reservation" in param:
-            params.append(("extended_info:reservable", "true"))
+            params.append(("extended_info:reservable", "reservations"))
+        if "occupancy" in param:
+            params.append(("extended_info:reservable", "occupancies"))
         if "capacity" in param:
             params.append(("capacity", request.GET[param]))
         if "open_at" in param:
