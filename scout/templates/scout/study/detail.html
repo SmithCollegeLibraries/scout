@@ -117,9 +117,7 @@
                           <i class="fa fa-coffee fa-stack-1x fa-inverse"></i>
                         </span>
                         <span class="scout-spot-action-text" style="margin-top: 3px;">
-                            {% if spot.food_nearby == 'building' %}Available in building
-                            {% elif spot.food_nearby == 'neighboring' %}Available in neighboring building
-                            {% elif spot.food_nearby == 'space' %}Available in the space
+                            {% if spot.food_nearby == 'vending' %}Vending machine in building
                             {% else %}{{ spot.food_nearby }}{% endif %}
                         </span>
                     </div>
