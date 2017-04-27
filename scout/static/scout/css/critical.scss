@@ -118,7 +118,6 @@ h1, h2, h3, h4 {
         height: 60px;
         color: $scout-purple;
         text-transform: uppercase;
-        font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
         font-weight: 900;
         font-size: 30px;
         text-align: left;
@@ -130,7 +129,7 @@ h1, h2, h3, h4 {
         }
     }
 
-    .scout-campus-chooser { position:absolute; z-index:9999; top:15px; right:20px; font-size:12px; font-family: sans-serif;
+    .scout-campus-chooser { position:absolute; z-index:9999; top:15px; right:20px; font-size:12px;
 
         #campus_select_base {
             position: absolute;
@@ -236,19 +235,19 @@ h1, h2, h3, h4 {
                         .scout-spot-content { display:inline-block; float:left; width:70%; margin:0;
 
                             // spot details
-                            .scout-spot-type { font-family: sans-serif; font-size: 11px; float:left; color:#767676; width:65%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+                            .scout-spot-type { font-size: 11px; float:left; color:#767676; width:65%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
                                 span { margin-right: 8px; text-transform: uppercase; }
                             }
-                            .scout-spot-capacity { font-family: sans-serif; font-size: 11px; float:right; color: #767676;}
+                            .scout-spot-capacity { font-size: 11px; float:right; color: #767676;}
 
-                            .scout-spot-name { margin: 0; font-family: "Sentinel SSm A", "Sentinel SSm B", sans-serif;
+                            .scout-spot-name { margin: 0;
                             font-weight: 700; font-size: 16px; margin-top: 10px; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; clear: both;}
 
                             .scout-spot-location { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #666; line-height: 22px; width: 75%;
                                 .fa { color: $scout-purple; }
                             }
 
-                            .scout-spot-distance { font-family: sans-serif; font-size: 10px; font-weight: normal; color: #000; background: $scout-blue; padding: 0 5px; color: #fff; display: inline-block; border-radius: 2px; position: absolute; right: 20px;}
+                            .scout-spot-distance { font-size: 10px; font-weight: normal; color: #000; background: $scout-blue; padding: 0 5px; color: #fff; display: inline-block; border-radius: 2px; position: absolute; right: 20px;}
 
                             .scout-spot-open-period { margin-bottom: 10px; color: #666; text-transform: uppercase; font-size: 14px;
                                 span { margin-right: 10px; }
@@ -284,7 +283,7 @@ h1, h2, h3, h4 {
 
             .scout-spot-meta { background: #444; color: #fff; padding: 10px 20px; position: relative;
 
-                .scout-spot-name { font-family: "Sentinel SSm A", "Sentinel SSm B", sans-serif; font-weight: 700; font-size: 18px; margin: 0; line-height: 30px; width:100%; white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; }
+                .scout-spot-name { font-weight: 700; font-size: 18px; margin: 0; line-height: 30px; width:100%; white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; }
                 .scout-spot-type { text-transform: uppercase; font-weight: normal; font-size: 12px; margin: 0; position: absolute; top: 15px; right:20px; color: #BBB;
                     span { margin-left: 10px; }
                 }
@@ -342,9 +341,9 @@ h1, h2, h3, h4 {
 
             .scout-spot-content {
 
-                h3 { font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; font-weight: 700; font-size: 13px; color: $scout-purple; text-transform: uppercase; letter-spacing: 1px; margin: 0; line-height: 35px; }
+                h3 { font-weight: 700; font-size: 13px; color: $scout-purple; text-transform: uppercase; letter-spacing: 1px; margin: 0; line-height: 35px; }
 
-                h4 { font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; font-weight: 700; font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin: 0; line-height: 35px;
+                h4 { font-weight: 700; font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin: 0; line-height: 35px;
                     .fa { color: $scout-purple; }
                 }
 
@@ -368,7 +367,7 @@ h1, h2, h3, h4 {
             }
             .scout-discover-content {
 
-                h3 { font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; font-weight: 700; font-size: 12px; color: $scout-purple; text-transform: uppercase; letter-spacing: 1px; margin: 0; line-height: 35px;
+                h3 { font-weight: 700; font-size: 12px; color: $scout-purple; text-transform: uppercase; letter-spacing: 1px; margin: 0; line-height: 35px;
 
                     .fa-stack { color: $scout-purple; }
                 }
@@ -384,7 +383,7 @@ h1, h2, h3, h4 {
 
                         .scout-spot-image { background-color: #e5e6e9; background-size:cover; background-repeat: no-repeat; background-position: center center; display: inline-block; width: 55px; height: 55px; float:left; margin-right: 10px; }
                         .scout-spot-name { display:block; line-height: 25px; font-size: 15px; margin:inherit; font-weight:normal;}
-                        .scout-spot-distance { font-family: sans-serif; font-size: 12px; color: #000; }
+                        .scout-spot-distance { font-size: 12px; color: #000; }
                         .scout-spot-location { display:block; float:left; width: 75%; white-space: nowrap; font-size: 12px; color: #666; overflow: hidden; text-overflow: ellipsis; }
 
                     }
@@ -406,7 +405,7 @@ h1, h2, h3, h4 {
         .scout-filter-container {
 
             fieldset { border: none; padding: 0; margin:0;  margin-bottom: 20px; float: left; width: 50%; font-size: 14px;
-                legend { font-family: "Sentinel SSm A", "Sentinel SSm B", sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase; margin-bottom: 8px; color: #004f71; padding: 5px 0; letter-spacing: 1px; }
+                legend { font-weight: 700; font-size: 12px; text-transform: uppercase; margin-bottom: 8px; color: #004f71; padding: 5px 0; letter-spacing: 1px; }
 
                 h3 { font-weight:normal; font-size: 11px; text-transform: uppercase; margin-bottom: 3px; color:#666; padding: 5px 0; letter-spacing: 1px; }
             }
