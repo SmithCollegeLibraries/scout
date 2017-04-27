@@ -6,9 +6,9 @@ file.
 
 // sass variables
 
-$scout-purple: #6564A8;
-$scout-blue: #25738f;
-$scout-link: #25738f;
+$scout-purple: #004f71;
+$scout-blue: #003e51;
+$scout-link: #003e51;
 $geolocation-height: 45px;
 $footer-height: 40px;
 
@@ -396,7 +396,7 @@ a {color: $scout-link;}
         .scout-filter-container {
 
             fieldset { border: none; padding: 0; margin:0;  margin-bottom: 20px; float: left; width: 50%; font-size: 14px;
-                legend { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase; margin-bottom: 8px; color: #6564a8; padding: 5px 0; letter-spacing: 1px; }
+                legend { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase; margin-bottom: 8px; color: #004f71; padding: 5px 0; letter-spacing: 1px; }
 
                 h3 { font-weight:normal; font-size: 11px; text-transform: uppercase; margin-bottom: 3px; color:#666; padding: 5px 0; letter-spacing: 1px; }
             }
