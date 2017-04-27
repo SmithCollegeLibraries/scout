@@ -20,11 +20,11 @@ a {color: $scout-link;}
 // Smith fonts
 
 body {
-    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-family: "Gotham SSm A", "Gotham SSm B" !important;
 }
 
 h1, h2, h3, h4 {
-    font-family: "Sentinel SSm A", "Sentinel SSm B";
+    font-family: "Sentinel SSm A", "Sentinel SSm B" !important;
 }
 
 // geolocation bar
