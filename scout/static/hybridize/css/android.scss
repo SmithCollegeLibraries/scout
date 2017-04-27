@@ -1,4 +1,15 @@
 
+
+// Smith fonts
+
+body {
+    font-family: "Sentinel SSm A", "Sentinel SSm B";
+}
+
+h1, h2, h3, h4 {
+    font-family: "Gotham SSm A", "Gotham SSm B";
+}
+
 /*** framework7 overrides ***/
 
 .item-media {
@@ -38,7 +49,7 @@
 
 /*** scout android styles  ***/
 
-body { font-family: 'Roboto', sans-serif; }
+body { font-family: "Sentinel SSm A", "Sentinel SSm B", sans-serif; }
 
 .scout-list {
 

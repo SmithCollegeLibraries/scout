@@ -17,6 +17,16 @@ $footer-height: 40px;
 body { background: #f1f1f1; }
 a {color: $scout-link;}
 
+// Smith fonts
+
+body {
+    font-family: "Sentinel SSm A", "Sentinel SSm B";
+}
+
+h1, h2, h3, h4 {
+    font-family: "Gotham SSm A", "Gotham SSm B";
+}
+
 // geolocation bar
 
 .scout-geolocation { min-height: $geolocation-height; background: $scout-blue; position: relative;
@@ -108,7 +118,7 @@ a {color: $scout-link;}
         height: 60px;
         color: $scout-purple;
         text-transform: uppercase;
-        font-family: 'Raleway', sans-serif;
+        font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
         font-weight: 900;
         font-size: 30px;
         text-align: left;
@@ -231,7 +241,7 @@ a {color: $scout-link;}
                             }
                             .scout-spot-capacity { font-family: sans-serif; font-size: 11px; float:right; color: #767676;}
 
-                            .scout-spot-name { margin: 0; font-family: 'Raleway', sans-serif;
+                            .scout-spot-name { margin: 0; font-family: "Sentinel SSm A", "Sentinel SSm B", sans-serif;
                             font-weight: 700; font-size: 16px; margin-top: 10px; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; clear: both;}
 
                             .scout-spot-location { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #666; line-height: 22px; width: 75%;
@@ -274,7 +284,7 @@ a {color: $scout-link;}
 
             .scout-spot-meta { background: #444; color: #fff; padding: 10px 20px; position: relative;
 
-                .scout-spot-name { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 18px; margin: 0; line-height: 30px; width:100%; white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; }
+                .scout-spot-name { font-family: "Sentinel SSm A", "Sentinel SSm B", sans-serif; font-weight: 700; font-size: 18px; margin: 0; line-height: 30px; width:100%; white-space: nowrap; overflow-x: hidden; text-overflow: ellipsis; }
                 .scout-spot-type { text-transform: uppercase; font-weight: normal; font-size: 12px; margin: 0; position: absolute; top: 15px; right:20px; color: #BBB;
                     span { margin-left: 10px; }
                 }
@@ -332,9 +342,9 @@ a {color: $scout-link;}
 
             .scout-spot-content {
 
-                h3 { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px; color: $scout-purple; text-transform: uppercase; letter-spacing: 1px; margin: 0; line-height: 35px; }
+                h3 { font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; font-weight: 700; font-size: 13px; color: $scout-purple; text-transform: uppercase; letter-spacing: 1px; margin: 0; line-height: 35px; }
 
-                h4 { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin: 0; line-height: 35px;
+                h4 { font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; font-weight: 700; font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin: 0; line-height: 35px;
                     .fa { color: $scout-purple; }
                 }
 
@@ -358,7 +368,7 @@ a {color: $scout-link;}
             }
             .scout-discover-content {
 
-                h3 { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 12px; color: $scout-purple; text-transform: uppercase; letter-spacing: 1px; margin: 0; line-height: 35px;
+                h3 { font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; font-weight: 700; font-size: 12px; color: $scout-purple; text-transform: uppercase; letter-spacing: 1px; margin: 0; line-height: 35px;
 
                     .fa-stack { color: $scout-purple; }
                 }
@@ -396,7 +406,7 @@ a {color: $scout-link;}
         .scout-filter-container {
 
             fieldset { border: none; padding: 0; margin:0;  margin-bottom: 20px; float: left; width: 50%; font-size: 14px;
-                legend { font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase; margin-bottom: 8px; color: #004f71; padding: 5px 0; letter-spacing: 1px; }
+                legend { font-family: "Sentinel SSm A", "Sentinel SSm B", sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase; margin-bottom: 8px; color: #004f71; padding: 5px 0; letter-spacing: 1px; }
 
                 h3 { font-weight:normal; font-size: 11px; text-transform: uppercase; margin-bottom: 3px; color:#666; padding: 5px 0; letter-spacing: 1px; }
             }
