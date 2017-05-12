@@ -90,7 +90,7 @@ var Map = {
                         path: google.maps.SymbolPath.CIRCLE,
                         fillColor: '#ffffff',
                         fillOpacity: 1,
-                        strokeColor: '#6564A8',
+                        strokeColor: '#004f71',
                         scale: 5,
                         strokeWeight: 5
                     },
@@ -247,7 +247,7 @@ var Map = {
     _set_spidered_icon: function (marker) {
         // The icon you want displayed on markers that are spidered
         var icon = marker.getIcon();
-        icon.fillColor = "#6564A8";
+        icon.fillColor = "#004f71";
         icon.strokeColor = "#ffffff";
         icon.strokeWeight = 5
         icon.scale = 6;
@@ -258,7 +258,7 @@ var Map = {
         // The icon you want displayed on markers that are not spidered (eg single spot or expanded)
         var icon = marker.getIcon();
         icon.fillColor = "#ffffff";
-        icon.strokeColor = '#6564A8';
+        icon.strokeColor = '#004f71';
         icon.strokeWeight = 5;
         icon.scale = 5;
         marker.setIcon(icon);
@@ -368,7 +368,7 @@ var Map = {
                 labelClass: "map-label", // the CSS class for the label
                 icon: {
                     path: google.maps.SymbolPath.CIRCLE,
-                    fillColor: '#53518e',
+                    fillColor: '#004f71',
                     fillOpacity: 1,
                     strokeColor: '#ffffff',
                     strokeWeight: 2,
@@ -410,7 +410,7 @@ var Map = {
                         path: google.maps.SymbolPath.CIRCLE,
                         fillColor: '#ffffff',
                         fillOpacity: 1,
-                        strokeColor: '#c0392b',
+                        strokeColor: '#004f71',
                         scale: 5,
                         strokeWeight: 5
                     }
@@ -445,7 +445,7 @@ var Map = {
                     path: google.maps.SymbolPath.CIRCLE,
                     fillColor: '#ffffff',
                     fillOpacity: 1,
-                    strokeColor: '#6564A8',
+                    strokeColor: '#004f71',
                     scale: 5,
                     strokeWeight: 5
                 },
