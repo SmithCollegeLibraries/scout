@@ -65,7 +65,7 @@ class DiscoverCardView(TemplateView):
         # Change it per need basis.
         discover_categories = {
             "studyopen": {
-                "title": "Open Space",
+                "title": "Open Spaces",
                 "spot_type": "study",
                 "filter_url": "type0=open",
                 "filter": [
@@ -125,7 +125,7 @@ class DiscoverCardView(TemplateView):
                 ]
             },
             "studysilent": {
-                "title": "Silent Space",
+                "title": "Silent Spaces",
                 "spot_type": "study",
                 "filter_url": "noise0=silent",
                 "filter": [
