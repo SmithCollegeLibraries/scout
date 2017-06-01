@@ -48,7 +48,7 @@ class DiscoverView(TemplateView):
         self.template_name = kwargs['template_name']
         context = {"campus": kwargs['campus'],
                    "campus_locations": CAMPUS_LOCATIONS,
-                   "random_cards": ["studyopen", "studyrooms"]}
+                   "random_cards": ["studyopen", "studylounge", "studyareas", "studyrooms", "studylabs", "studysilent", "studynaturallight"]}
         return context
 
 
@@ -65,7 +65,7 @@ class DiscoverCardView(TemplateView):
         # Change it per need basis.
         discover_categories = {
             "studyopen": {
-                "title": "Open Study",
+                "title": "Open Space",
                 "spot_type": "study",
                 "filter_url": "type0=open",
                 "filter": [
@@ -74,6 +74,30 @@ class DiscoverCardView(TemplateView):
                     ('center_longitude', lon if lon else DEFAULT_LON),
                     ('distance', 100000),
                     ('type', 'open')
+                    ]
+            },
+            "studylounge": {
+                "title": "Lounges",
+                "spot_type": "study",
+                "filter_url": "type0=lounge",
+                "filter": [
+                    ('limit', 5),
+                    ('center_latitude', lat if lat else DEFAULT_LAT),
+                    ('center_longitude', lon if lon else DEFAULT_LON),
+                    ('distance', 100000),
+                    ('type', 'lounge')
+                    ]
+            },
+            "studyareas": {
+                "title": "Study Areas",
+                "spot_type": "study",
+                "filter_url": "type0=study_area",
+                "filter": [
+                    ('limit', 5),
+                    ('center_latitude', lat if lat else DEFAULT_LAT),
+                    ('center_longitude', lon if lon else DEFAULT_LON),
+                    ('distance', 100000),
+                    ('type', 'study_area')
                     ]
             },
             "studyrooms": {
@@ -86,6 +110,42 @@ class DiscoverCardView(TemplateView):
                     ('center_longitude', lon if lon else DEFAULT_LON),
                     ('distance', 100000),
                     ('type', 'study_room')
+                ]
+            },
+            "studylabs": {
+                "title": "Computer Labs",
+                "spot_type": "study",
+                "filter_url": "type0=computer_lab",
+                "filter": [
+                    ('limit', 5),
+                    ('center_latitude', lat if lat else DEFAULT_LAT),
+                    ('center_longitude', lon if lon else DEFAULT_LON),
+                    ('distance', 100000),
+                    ('type', 'computer_lab')
+                ]
+            },
+            "studysilent": {
+                "title": "Silent Space",
+                "spot_type": "study",
+                "filter_url": "noise0=silent",
+                "filter": [
+                    ('limit', 5),
+                    ('center_latitude', lat if lat else DEFAULT_LAT),
+                    ('center_longitude', lon if lon else DEFAULT_LON),
+                    ('distance', 100000),
+                    ('extended_info:noise_level', 'silent')
+                ]
+            },
+            "studynaturallight": {
+                "title": "Natural Light",
+                "spot_type": "study",
+                "filter_url": "lighting0=has_natural_light",
+                "filter": [
+                    ('limit', 5),
+                    ('center_latitude', lat if lat else DEFAULT_LAT),
+                    ('center_longitude', lon if lon else DEFAULT_LON),
+                    ('distance', 100000),
+                    ('extended_info:has_natural_light', 'true')
                 ]
             },
         }
