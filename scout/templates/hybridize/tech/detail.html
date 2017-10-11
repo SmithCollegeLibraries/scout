@@ -9,7 +9,7 @@
 <div class="card">
 
     {% if spot.item.images %}
-    <div class="scout-detail-image" style="background-image:url('/item/images/{{ spot.item.item_id }}/image/{{ spot.item.images.0.image_id }}/?width=500'); height:270px;" valign="bottom" class="card-header">&nbsp;</div>
+    <div class="scout-detail-image" style="background-image:url('/item/images/{{ spot.item.item_id }}/image/{{ spot.item.images.0.image_id }}/?width=500'); height:270px;" role="image" aria-label="{{ spot.item.images.0.description }}" valign="bottom" class="card-header">&nbsp;</div>
     {% endif %}
 
     <div class="card-content">

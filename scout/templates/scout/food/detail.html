@@ -17,7 +17,7 @@
             <h3 class="visually-hidden">Overview</h3>
 
             {% if spot.images %}
-            <div class="scout-spot-image spot-detail-main-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('/images/{{ spot.spot_id }}/image/{{ spot.images.0.image_id }}/?width=500');"></div>
+            <div class="scout-spot-image spot-detail-main-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('/images/{{ spot.spot_id }}/image/{{ spot.images.0.image_id }}/?width=500');" role="image" aria-label="{{ spot.images.0.description }}" ></div>
             {% else %}
             {% endif %}
             <div>
