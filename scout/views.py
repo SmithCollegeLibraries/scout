@@ -13,6 +13,7 @@ from scout.dao.image import get_spot_image, get_item_image
 from scout.dao.item import (get_item_by_id, get_filtered_items, get_item_count)
 
 from django.views.generic.base import TemplateView, TemplateResponse
+import datetime
 
 # using red square as the default center
 DEFAULT_LAT = 42.319862
@@ -48,7 +49,7 @@ class DiscoverView(TemplateView):
         self.template_name = kwargs['template_name']
         context = {"campus": kwargs['campus'],
                    "campus_locations": CAMPUS_LOCATIONS,
-                   "random_cards": ["studyopen", "studylounge", "studyareas", "studyrooms", "studylabs", "studysilent", "studynaturallight"]}
+                   "random_cards": ["studyopen", "studylounge", "studyareas", "studyrooms", "studylabs", "studysilent", "studynaturallight", "studyafterhours"]}
         return context
 
 
@@ -61,6 +62,10 @@ class DiscoverCardView(TemplateView):
         # Will figure this out later
         lat = self.request.GET.get('latitude', None)
         lon = self.request.GET.get('longitude', None)
+
+        # day name for After Hours filter.
+        tomorrow = datetime.date.today() + datetime.timedelta(days=1)
+        tomorrow_dayname = tomorrow.strftime("%A")
 
         # Change it per need basis.
         discover_categories = {
@@ -134,6 +139,19 @@ class DiscoverCardView(TemplateView):
                     ('center_longitude', lon if lon else DEFAULT_LON),
                     ('distance', 100000),
                     ('extended_info:noise_level', 'silent')
+                ]
+            },
+            "studyafterhours": {
+                "title": "After Hours",
+                "spot_type": "study",
+                "filter_url": "open_at="+tomorrow_dayname+"%2C00%3A00&open_until="+tomorrow_dayname+"%2C01%3A00",
+                "filter": [
+                    ('limit', 5),
+                    ('center_latitude', lat if lat else DEFAULT_LAT),
+                    ('center_longitude', lon if lon else DEFAULT_LON),
+                    ('open_at', tomorrow_dayname+',00:00'),
+                    ('open_until', tomorrow_dayname+',01:00'),
+                    ('distance', 100000)
                 ]
             },
             "studynaturallight": {
