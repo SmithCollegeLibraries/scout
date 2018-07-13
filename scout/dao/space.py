@@ -318,6 +318,9 @@ def add_additional_info(spot):
     spot.location_description = \
         _get_extended_info_by_key("location_description",
                                   spot.extended_info)
+    spot.accessibility_description = \
+        _get_extended_info_by_key("accessibility_description",
+                                  spot.extended_info)
     spot.campus = _get_extended_info_by_key("campus", spot.extended_info)
     spot.hours_notes = _get_extended_info_by_key("hours_notes",
                                                  spot.extended_info)

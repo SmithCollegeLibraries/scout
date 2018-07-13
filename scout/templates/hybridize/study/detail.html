@@ -48,6 +48,13 @@
             </div>
         </li>
         {% endif %}
+        {% if spot.accessibility_description %}
+        <li class="item-content">
+            <div class="item-inner">
+                <div class="item-title">Accessibility <span>{{ spot.accessibility_description }}</span></div>
+            </div>
+        </li>
+        {% endif %}
         {% if spot.capacity %}
         <li class="item-content">
             <div class="item-inner">

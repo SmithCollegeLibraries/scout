@@ -187,6 +187,14 @@
                         <div>{{ spot.location_description}}</div>
                     </div>
 
+                    {% if spot.accessibility_description %}
+                    <h3>Accessibility</h3>
+                    <h4 class="visually-hidden">Building accessibility</h4>
+                    <div class="scout-spot-building-info">
+                        <div>{{ spot.accessibility_description}}</div>
+                    </div>
+                    {% endif %}
+
                 </div>
 
                 {% if request.is_mobile %}
