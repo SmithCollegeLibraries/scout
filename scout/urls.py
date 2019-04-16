@@ -23,7 +23,7 @@ from scout.views import HybridFoodListView
 urlpatterns = patterns(
     '',
     # home
-    url(r'^$', RedirectView.as_view(url='/smith/study', permanent=True)),
+    url(r'^$', RedirectView.as_view(url='/smith', permanent=True)),
 
     # discover
     url(r'^(?P<campus>[^/]+)/$',
