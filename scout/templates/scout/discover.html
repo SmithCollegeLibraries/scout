@@ -10,7 +10,7 @@
 
     {% if request.is_mobile or request.is_tablet %}{% include "scout/include/user_geolocation.html" %}{% endif %}
 
-    <div class="scout-discover-container" style="position:relative;" role="main" aria-labelledby="campus_heading">
+    <div class="scout-discover-container scout-filter-results" style="position:relative;" role="main" aria-labelledby="campus_heading">
 
         <div class="scout-discover-image" style="background-image:url('{% static "scout/img/smith/smith.jpg" %}'); background-size:cover; color:#fff;">
 
@@ -36,6 +36,12 @@
                 <div class="sk-circle10 sk-circle"></div>
                 <div class="sk-circle11 sk-circle"></div>
                 <div class="sk-circle12 sk-circle"></div>
+            </div>
+        </div>
+
+        <div class="scout-filter-results-results clearfix">
+            <div class="scout-filter-results-actions">
+                <a href="/smith/study/filter/" id="study_link_filter" title="Filter list of study places on campus"><i class="fa fa-sliders fa-inverse"></i> <span class="scout-filter-results-action">Filter Spaces</span></a>
             </div>
         </div>
 
