@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.conf.urls import patterns, include, url, handler404
+from django.conf.urls import include, url, handler404
 from django.views.generic import TemplateView
 from django.views.generic.base import RedirectView
 from scout import views
@@ -20,8 +20,8 @@ from scout.views import TechFilterView
 
 from scout.views import HybridFoodListView
 
-urlpatterns = patterns(
-    '',
+urlpatterns = [
+    # '',
     # home
     url(r'^$', RedirectView.as_view(url='/smith', permanent=True)),
 
@@ -104,7 +104,7 @@ urlpatterns = patterns(
         {"template_name": "hybridize/tech/filter.html"}),
 
     # hybrid components
-    url(r'^h/components/$', 'scout.views.hybrid_comps_view',
+    url(r'^h/components/$', views.hybrid_comps_view,
         name='hybrid_comps_view'),
 
     # images
@@ -112,16 +112,15 @@ urlpatterns = patterns(
         views.spot_image_view),
     url(r'^item/images/(?P<item_id>\d+)/image/(?P<image_id>\d+)/$',
         views.item_image_view),
-
-)
+]
 
 
 # debug routes for developing error pages
 if settings.DEBUG:
-    urlpatterns += patterns(
-        '',
+    urlpatterns += [
+        #'',
         url(r'^500/$', TemplateView.as_view(template_name='500.html')),
         url(r'^404/$',
-            'scout.views.custom_404_response',
+            views.custom_404_response,
             name='custom_404_response'),
-    )
+    ]
