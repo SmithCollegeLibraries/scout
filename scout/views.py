@@ -24,6 +24,8 @@ CAMPUS_LOCATIONS = {
     "smith": {"latitude": 42.319862, "longitude": -72.638693},
 }
 
+class OfflineView(TemplateView):
+   template_name = "offline.html"
 
 def validate_campus_selection(function):
     def wrap(request, *args, **kwargs):
